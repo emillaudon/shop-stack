@@ -1,17 +1,16 @@
-# Shop Stack
+# Shop stack
 
-This repository runs the full **Shop application stack** using Docker Compose.
+This repository runs the full shop application using Docker Compose.
 
-It pulls **pre-built Docker images** for the frontend and backend from **GitHub Container Registry (GHCR)**, so you only need this repo to run the system.
+It uses pre-built Docker images, so you only need this repo to start everything.
 
 ---
 
-## Architecture
+## Includes
 
-- **Frontend**: Angular (served via Nginx)
-- **Backend**: Spring Boot (Java)
-- **Database**: MySQL
-- **Container registry**: GitHub Container Registry (GHCR)
+- Frontend: Angular (served via Nginx)
+- Backend: Spring Boot (Java)
+- Database: MySQL
 
 Source repositories:
 
@@ -37,6 +36,34 @@ Source repositories:
 
 ```bash
 copy .env.example .env
-
-**Mac/Linux**
 ```
+
+**Mac / Linux**
+
+```bash
+cp .env.example .env
+```
+
+---
+
+### 2. Start the stack
+
+```bash
+docker compose pull
+docker compose up
+```
+
+---
+
+## URLs
+
+- Frontend: http://localhost:4200
+- Backend: http://localhost:8080
+
+---
+
+## Notes
+
+- Docker images are built automatically via GitHub Actions
+- This repo only contains Docker Compose configuration
+- `.env` is intentionally ignored
